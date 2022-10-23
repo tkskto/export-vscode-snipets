@@ -1,3 +1,7 @@
+export function generateSnippetsJson(snippets: Snippet[]): SnippetsFile
+export function writeSnippetsJson(snippets: Snippet[], type: SnippetType): void
+export function exportSnippets(): void
+
 declare namespace export_vscode_snippets {
     type SnippetType = 'html';
     type SnippetSelector = {
@@ -7,9 +11,6 @@ declare namespace export_vscode_snippets {
         codeElement: string
         descriptionElement: string
     }
-
-    export function writeSnippetsJson(snippets: Snippet[], type: SnippetType): void;
-    export function exportSnippets(): void;
 
     interface SnippetsFile {
         [key:string]: {

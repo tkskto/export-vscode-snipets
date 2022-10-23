@@ -8,7 +8,7 @@ export-vscode-snippets はVSCode用のスニペットファイルを生成する
 
 ### HTMLファイルから生成する
 
-[@export-vscode-snippets/snippet-finder-html](https://github.com/tkskto/export-vscode-snippets/packages/@export-vscode-snippets/snippet-finder-html/)を参照してください。
+[@export-vscode-snippets/snippet-finder-html]()を参照してください。
 
 ### WIP: Storybookから生成する
 

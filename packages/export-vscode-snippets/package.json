@@ -4,22 +4,40 @@
     "description": "export-vscode-snippets is a tool for export vs code snippets JSON from code.",
     "type": "module",
     "bin": {
-        "vca": "bin/export.js"
+        "export-vscode-snippets": "bin/export.js"
     },
-    "scripts": {
-        "typescript": "tsc -p tsconfig.json",
-        "rollup": "rollup --config",
-        "build": "run-s typescript rollup",
-        "test": "npm run test:base",
-        "test:base": "jest --config=jest.config.js --testTimeout=60000",
-        "tmp": "node bin/export.js -c .export-snippets.config.js"
-    },
+    "types": "types/index.d.ts",
     "keywords": [
         "vscode",
         "export-vscode-snippets"
     ],
+    "homepage": "https://github.com/tkskto/export-vscode-snippets",
     "author": "Takeshi Kato <tkskto@gmail.com> (https://github.com/tkskto)",
     "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tkskto/export-vscode-snippets/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tkskto/export-vscode-snippets.git"
+    },
+    "files": [
+        "bin",
+        "dist",
+        "types"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "dev": "tsc -p tsconfig.json -w",
+        "build": "run-s typescript rollup",
+        "typescript": "tsc -p tsconfig.json",
+        "rollup": "rollup --config",
+        "test": "npm run test:base",
+        "test:base": "jest --config=jest.config.js --testTimeout=60000",
+        "tmp": "node bin/export.js -c .export-snippets.config.js"
+    },
     "dependencies": {
         "commander": "9.4.1"
     },
