@@ -18,7 +18,7 @@ export const generateSnippetsJson = (snippets: Snippet[]): SnippetsFile => {
         result[snippet.name] = {
             prefix: snippet.prefix,
             body: snippet.body.split('\n'),
-            description: snippet.descriptions,
+            description: snippet.description,
         };
     });
 
@@ -42,10 +42,21 @@ export const exportSnippets = async () => {
         return;
     }
 
-    const config: ExportSnippetsConfig = await import(resolve(cwd, argv.config));
-    const finder: SnippetFinder = await import(config.snippetFinder.finderName);
-    console.log(finder);
-    const snippets = await finder.findSnippets(config.src, config.snippetFinder.snippetSelector);
+    const configModule = await import(resolve(cwd, argv.config));
+    const config: ExportSnippetsConfig = configModule.default;
+    const promises: Promise<SnippetFinder>[] = [];
 
-    writeSnippetsJson(snippets, config.type);
+    config.snippetFinderList.forEach((finder) => {
+        promises.push(import(finder.finderName));
+    });
+
+    const finderList = await Promise.all(promises);
+
+    finderList.forEach((finder, index) => {
+        const snippetFinder = config.snippetFinderList[index];
+
+        finder.findSnippets(config.src, snippetFinder.snippetSelector).then((snippets) => {
+            writeSnippetsJson(snippets, snippetFinder.type);
+        });
+    });
 };

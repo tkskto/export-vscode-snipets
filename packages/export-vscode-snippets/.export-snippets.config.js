@@ -1,13 +1,14 @@
 export default {
-    src: 'test',
-    snippetFinder: {
-        finderName: './@export-vscode-snippets/snippet-finder-html',
+    src: 'test/fixture/**',
+    snippetFinderList: [{
+        type: 'html',
+        finderName: '@export-vscode-snippets/snippet-finder-html',
         snippetSelector: {
-            module: '',
-            nameElement: '',
-            prefixElement: '',
-            codeElement: '',
-            descriptionElement: '',
+            module: '.module',
+            nameElement: '.name',
+            prefixElement: '.prefix',
+            codeElement: '.code',
+            descriptionElement: '.description',
         },
-    },
+    }],
 };

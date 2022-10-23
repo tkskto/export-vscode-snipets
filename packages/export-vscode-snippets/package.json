@@ -14,11 +14,14 @@
         "test:base": "jest --config=jest.config.js --testTimeout=60000",
         "tmp": "node bin/export.js -c .export-snippets.config.js"
     },
-    "keywords": [],
+    "keywords": [
+        "vscode",
+        "export-vscode-snippets"
+    ],
     "author": "Takeshi Kato <tkskto@gmail.com> (https://github.com/tkskto)",
     "license": "MIT",
     "dependencies": {
-        "commander": "^9.4.1"
+        "commander": "9.4.1"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "23.0.2",
