@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "removeComments": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "newLine": "LF",
+        "target": "ES2015",
+        "sourceMap": true,
+        "declaration": true,
+        "composite": true
+    },
+    "references": [
+        {
+            "path": "packages/export-vscode-snippets"
+        },
+        {
+            "path": "packages/@export-vscode-snippets/snippet-finder-html"
+        },
+    ]
+}
