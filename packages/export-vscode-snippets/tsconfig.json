@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "outDir": ".temp",
+        "lib": [
+            "ES2015.Promise"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "../../types/index.d.ts"
+    ],
+    "exclude": [
+        "test",
+        "node_modules"
+    ]
+}
