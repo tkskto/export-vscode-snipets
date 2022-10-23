@@ -1,0 +1,15 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+        "module": "ESNext",
+        "outDir": ".temp"
+    },
+    "include": [
+        "src/**/*.ts",
+        "../../../types/index.d.ts"
+    ],
+    "exclude": [
+        "test",
+        "node_modules"
+    ]
+}
