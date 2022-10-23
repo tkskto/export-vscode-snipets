@@ -12,7 +12,10 @@
         "export-vscode-snippets"
     ],
     "homepage": "https://github.com/tkskto/export-vscode-snippets",
-    "author": "Takeshi Kato <tkskto@gmail.com> (https://github.com/tkskto)",
+    "author": {
+        "name": "tkskto",
+        "url": "https://github.com/tkskto/"
+    },
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/tkskto/export-vscode-snippets/issues"
