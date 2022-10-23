@@ -6,7 +6,7 @@
     },
     "include": [
         "src/**/*.ts",
-        "../../../types/index.d.ts"
+        "../../export-vscode-snippets/types/index.d.ts"
     ],
     "exclude": [
         "test",
