@@ -13,7 +13,8 @@
         "target": "ES2015",
         "sourceMap": true,
         "declaration": true,
-        "composite": true
+        "composite": true,
+        "typeRoots": ["node_modules/@types"]
     },
     "references": [
         {

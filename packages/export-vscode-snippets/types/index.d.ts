@@ -10,9 +10,10 @@ declare namespace export_vscode_snippets {
 
     interface SnippetsFile {
         [key:string]: {
-            prefix: string
+            prefix: string[]
             body: string[]
             description: string
+            scope: string
         }
     }
 

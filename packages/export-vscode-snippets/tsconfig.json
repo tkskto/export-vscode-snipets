@@ -5,9 +5,6 @@
         "outDir": ".temp",
         "lib": [
             "ES2015.Promise"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
         ]
     },
     "include": [

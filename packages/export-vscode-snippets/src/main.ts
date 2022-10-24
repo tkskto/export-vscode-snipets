@@ -7,7 +7,7 @@ import {writeFileSync} from 'fs';
 import {resolve} from 'path';
 import {getOptions} from './commander';
 
-export const generateSnippetsJson = (snippets: Snippet[]): SnippetsFile => {
+export const generateSnippetsJson = (snippets: Snippet[], type: SnippetType): SnippetsFile => {
     const result: SnippetsFile = {};
 
     snippets.forEach((snippet) => {
@@ -16,9 +16,10 @@ export const generateSnippetsJson = (snippets: Snippet[]): SnippetsFile => {
         }
 
         result[snippet.name] = {
-            prefix: snippet.prefix,
+            prefix: [snippet.prefix],
             body: snippet.body.split('\n'),
             description: snippet.description,
+            scope: type,
         };
     });
 
@@ -26,9 +27,9 @@ export const generateSnippetsJson = (snippets: Snippet[]): SnippetsFile => {
 };
 
 export const writeSnippetsJson = (snippets: Snippet[], type: SnippetType): void => {
-    const result = generateSnippetsJson(snippets);
+    const result = generateSnippetsJson(snippets, type);
 
-    writeFileSync(`${type}.json`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
+    writeFileSync(`${type}.code-snippets`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
 };
 
 export const exportSnippets = async () => {
