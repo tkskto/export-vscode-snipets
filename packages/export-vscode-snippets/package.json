@@ -39,7 +39,8 @@
         "rollup": "rollup --config",
         "test": "npm run test:base",
         "test:base": "jest --config=jest.config.js --testTimeout=60000",
-        "tmp": "node bin/export.js -c .export-snippets.config.js"
+        "tmp": "node bin/export.js -c .export-snippets.config.js",
+        "prepare": "npm run build"
     },
     "dependencies": {
         "commander": "9.4.1"
