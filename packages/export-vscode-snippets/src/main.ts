@@ -5,6 +5,7 @@ import SnippetsFile = export_vscode_snippets.SnippetsFile; // eslint-disable-lin
 import SnippetFinder = export_vscode_snippets.SnippetFinder; // eslint-disable-line
 import {writeFileSync} from 'fs';
 import {resolve} from 'path';
+import {pathToFileURL} from 'url';
 import {getOptions} from './commander';
 
 export const generateSnippetsJson = (snippets: Snippet[], type: SnippetType): SnippetsFile => {
@@ -43,7 +44,7 @@ export const exportSnippets = async () => {
         return;
     }
 
-    const configModule = await import(resolve(cwd, argv.config));
+    const configModule = await import(pathToFileURL(resolve(cwd, argv.config)).toString());
     const config: ExportSnippetsConfig = configModule.default;
     const promises: Promise<SnippetFinder>[] = [];
 
@@ -51,7 +52,7 @@ export const exportSnippets = async () => {
         promises.push(import(finder.finderName));
     });
 
-    const finderList = await Promise.all(promises);
+    const finderList: SnippetFinder[] = await Promise.all(promises);
 
     finderList.forEach((finder, index) => {
         const snippetFinder = config.snippetFinderList[index];

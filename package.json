@@ -21,6 +21,7 @@
         "url": "https://github.com/tkskto/export-vscode-snippets.git"
     },
     "scripts": {
+        "build": "lerna run build",
         "lint": "eslint -c .eslintrc.json packages",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky install"

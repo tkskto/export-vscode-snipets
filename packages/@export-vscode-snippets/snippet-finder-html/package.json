@@ -1,6 +1,6 @@
 {
     "name": "@export-vscode-snippets/snippet-finder-html",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "snippets HTML finder for export-vscode-snippets.",
     "type": "module",
     "main": "dist/index.mjs",
@@ -13,7 +13,8 @@
     "author": {
         "name": "tkskto",
         "url": "https://github.com/tkskto/"
-    },    "license": "MIT",
+    },
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/tkskto/export-vscode-snippets/issues"
     },

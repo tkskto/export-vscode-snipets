@@ -33,6 +33,7 @@ export default [
         external: [
             'fs',
             'path',
+            'url',
         ],
         plugins: [
             json(),
