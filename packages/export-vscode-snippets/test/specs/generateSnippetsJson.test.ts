@@ -2,7 +2,7 @@ import {generateSnippetsJson} from '../../src/main';
 
 describe('generateSnippets test', () => {
     it('nothing', () => {
-        const json = generateSnippetsJson([]);
+        const json = generateSnippetsJson([], 'html');
 
         expect(json).toStrictEqual({});
     });
@@ -11,14 +11,15 @@ describe('generateSnippets test', () => {
             prefix: 'prefix',
             name: 'name',
             body: 'body',
-            descriptions: 'description',
-        }]);
+            description: 'description',
+        }], 'html');
 
         expect(json).toStrictEqual({
             name: {
-                prefix: 'prefix',
+                prefix: ['prefix'],
                 body: ['body'],
                 description: 'description',
+                scope: 'html',
             },
         });
     });
