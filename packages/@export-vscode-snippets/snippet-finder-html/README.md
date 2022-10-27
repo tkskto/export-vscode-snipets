@@ -10,7 +10,7 @@
 npm i export-vscode-snippets @export-vscode-snippets/snippet-finder-html
 ```
 
-`.export-snippets.config.js`というファイルをルートに作成し、次の内容を記載します。
+`.export-snippets.config.mjs`というファイルをルートに作成し、次の内容を記載します。
 
 ```javascript
 export default {
@@ -32,7 +32,7 @@ export default {
 準備がおわったら次のコマンドを実行します。
 
 ```
-npx export-vscode-snippets -c .export-snippets.config.js
+npx export-vscode-snippets -c .export-snippets.config.mjs
 ```
 
 うまくいけば`html.code-snippets`というファイルが出力されるので`.vscode`フォルダにそのまま設置します。
