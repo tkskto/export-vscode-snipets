@@ -1,5 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import pkg from './package.json' assert {type: 'json'};
 
 let dependencies = '';
@@ -37,6 +38,7 @@ export default [
         plugins: [
             commonjs(),
             nodeResolve(),
+            terser(),
         ],
     },
 ];

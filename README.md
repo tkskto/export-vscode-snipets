@@ -8,7 +8,7 @@ export-vscode-snippets はVSCode用のスニペットファイルを生成する
 
 ### HTMLファイルから生成する
 
-[@export-vscode-snippets/snippet-finder-html](https://github.com/tkskto/export-vscode-snippets/packages/@export-vscode-snippets/snippet-finder-html/)を参照してください。
+[@export-vscode-snippets/snippet-finder-html](https://github.com/tkskto/export-vscode-snippets/tree/main/packages/%40export-vscode-snippets/snippet-finder-html)を参照してください。
 
 ### WIP: Storybookから生成する
 
@@ -16,16 +16,4 @@ export-vscode-snippets はVSCode用のスニペットファイルを生成する
 
 ### スニペットファイルの置き場所
 
-生成したスニペット設定ファイルの置き場所は次の通りです。
-
-#### macOS
-
-```
-/Users/{username}/Library/Application Support/Code/User/snippets/
-```
-
-#### Windows
-
-```
-あとで書く
-```
+生成したスニペット設定ファイルの置き場所は`.vscode`フォルダに配置します。
