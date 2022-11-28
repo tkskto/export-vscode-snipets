@@ -1,6 +1,6 @@
 {
     "name": "export-vscode-snippets",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "export-vscode-snippets is a tool for export vs code snippets JSON from code.",
     "type": "module",
     "bin": {
