@@ -27,10 +27,10 @@ export const generateSnippetsJson = (snippets: Snippet[], type: SnippetType): Sn
     return result;
 };
 
-export const writeSnippetsJson = (snippets: Snippet[], type: SnippetType): void => {
+export const writeSnippetsJson = (snippets: Snippet[], type: SnippetType, dir = '.'): void => {
     const result = generateSnippetsJson(snippets, type);
 
-    writeFileSync(`${type}.code-snippets`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
+    writeFileSync(`${dir}/${type}.code-snippets`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
 };
 
 export const exportSnippets = async () => {
@@ -58,7 +58,7 @@ export const exportSnippets = async () => {
         const snippetFinder = config.snippetFinderList[index];
 
         finder.findSnippets(config.src, snippetFinder.snippetSelector).then((snippets) => {
-            writeSnippetsJson(snippets, snippetFinder.type);
+            writeSnippetsJson(snippets, snippetFinder.type, config.output.dir);
         });
     });
 };
