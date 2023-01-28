@@ -5,11 +5,11 @@
         "outDir": ".temp"
     },
     "include": [
+        "test",
         "src/**/*.ts",
         "../../export-vscode-snippets/types/index.d.ts"
     ],
     "exclude": [
-        "test",
         "node_modules"
     ]
 }
