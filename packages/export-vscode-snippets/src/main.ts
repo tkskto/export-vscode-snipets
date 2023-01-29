@@ -67,7 +67,7 @@ export const exportSnippets = async () => {
     finderList.forEach((finder, index) => {
         const snippetFinder = config.snippetFinderList[index];
 
-        finder.findSnippets(config.src, snippetFinder.snippetSelector).then((snippets) => {
+        finder.findSnippets(config.src, snippetFinder.snippetSelector, snippetFinder.options).then((snippets) => {
             writeSnippetsJson(snippets, snippetFinder.type, config.output.dir);
         });
     });

@@ -37,4 +37,30 @@ npx export-vscode-snippets -c .export-snippets.config.mjs
 
 うまくいけば`html.code-snippets`というファイルが出力されるので`.vscode`フォルダにそのまま設置します。
 
-以上です。パッケージ名前が長くてすみません。カッコいい名前が思いつきませんでした。
+## オプション
+
+HTMLのパースには[node-html-parser](https://www.npmjs.com/package/node-html-parser)を使っています。
+
+`parse`メソッドに指定する[オプション](https://github.com/taoqf/node-html-parser#parsedata-options)が必要な場合は設定ファイルに記載してください。
+
+```javascript
+export default {
+    src: 'src/to/html/**',
+    snippetFinderList: [{
+        type: 'html', // 固定
+        finderName: '@export-vscode-snippets/snippet-finder-html', // 固定
+        snippetSelector: {
+            module: '.module', // スニペットに登録したいモジュール、コンポーネントのセレクターを指定します。
+            nameElement: '.name', // スニペットに登録される名前となるテキストコンテンツを持つ要素のセレクターを指定します。 
+            prefixElement: '.prefix', // スニペットのプレフィックスとなるテキストコンテンツを持つ要素のセレクターを指定します。 
+            codeElement: '.code', // 実際にスニペットとして登録されるコードを持つ要素のセレクターを指定します
+            descriptionElement: '.description', // スニペットの説明文となるテキストコンテンツを持つ要素のセレクターを指定します
+        },
+        options: {
+            'html-node-parser': {
+                comment: true,
+            },
+        },
+    }],
+};
+```

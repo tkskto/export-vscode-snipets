@@ -8,11 +8,11 @@
         ]
     },
     "include": [
+        "test",
         "src/**/*.ts",
         "types/index.d.ts"
     ],
     "exclude": [
-        "test",
         "node_modules"
     ]
 }
