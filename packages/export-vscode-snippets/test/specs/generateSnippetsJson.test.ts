@@ -6,6 +6,7 @@ describe('generateSnippets test', () => {
 
         expect(json).toStrictEqual({});
     });
+
     it('one snippets', () => {
         const json = generateSnippetsJson([{
             prefix: 'prefix',

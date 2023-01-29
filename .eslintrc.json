@@ -12,6 +12,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "arrow-body-style": 0,
         "multiline-comment-style": 0,
         "@typescript-eslint/no-var-requires": 0,
         "no-console": 1

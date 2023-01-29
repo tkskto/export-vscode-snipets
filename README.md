@@ -2,6 +2,8 @@
 
 export-vscode-snippets はVSCode用のスニペットファイルを生成するためのツールです。
 
+<https://www.npmjs.com/package/export-vscode-snippets>
+
 ## 使い方
 
 「スニペットファインダー」と勝手に呼んでいるプラグインっぽいものと組み合わせて使います。

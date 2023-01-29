@@ -2,7 +2,7 @@ import SnippetSelector = export_vscode_snippets.SnippetSelector; // eslint-disab
 import Snippet = export_vscode_snippets.Snippet; // eslint-disable-line
 import {readFileSync} from 'fs';
 import {resolve} from 'path';
-import {HTMLElement, parse} from 'node-html-parser';
+import {HTMLElement, Options, parse} from 'node-html-parser';
 const cwd = process.cwd();
 
 export class HtmlParser {
@@ -18,8 +18,8 @@ export class HtmlParser {
         return readFileSync(filename, 'utf-8');
     }
 
-    parse(html: string): HTMLElement {
-        return parse(html);
+    parse(html: string, options?: Partial<Options>): HTMLElement {
+        return parse(html, options);
     }
 
     find(dom: HTMLElement): Snippet[] {

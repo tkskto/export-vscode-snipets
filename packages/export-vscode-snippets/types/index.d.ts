@@ -26,7 +26,7 @@ declare namespace export_vscode_snippets {
 
     interface SnippetFinder {
         type: SnippetType
-        findSnippets: (src: string, snippetSelector: SnippetSelector) => Promise<Snippet[]>
+        findSnippets: (src: string, snippetSelector: SnippetSelector, option?: any) => Promise<Snippet[]>
     }
 
     interface ExportSnippetsConfig {
@@ -34,7 +34,8 @@ declare namespace export_vscode_snippets {
         snippetFinderList: {
             type: SnippetType
             finderName: string
-            snippetSelector: SnippetSelector
+            snippetSelector: SnippetSelector,
+            options?: any
         }[]
     }
 
