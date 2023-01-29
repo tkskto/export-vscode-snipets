@@ -3,7 +3,7 @@ import SnippetType = export_vscode_snippets.SnippetType; // eslint-disable-line
 import ExportSnippetsConfig = export_vscode_snippets.ExportSnippetsConfig; // eslint-disable-line
 import SnippetsFile = export_vscode_snippets.SnippetsFile; // eslint-disable-line
 import SnippetFinder = export_vscode_snippets.SnippetFinder; // eslint-disable-line
-import {writeFileSync} from 'fs';
+import {existsSync, mkdirSync, writeFileSync} from 'fs';
 import {resolve} from 'path';
 import {pathToFileURL} from 'url';
 import {getOptions} from './commander';
@@ -27,10 +27,20 @@ export const generateSnippetsJson = (snippets: Snippet[], type: SnippetType): Sn
     return result;
 };
 
-export const writeSnippetsJson = (snippets: Snippet[], type: SnippetType, dir = '.'): void => {
-    const result = generateSnippetsJson(snippets, type);
+export const writeSnippetsJson = (snippets: Snippet[], type: SnippetType, dir = '.vscode'): void => {
+    try {
+        const result = generateSnippetsJson(snippets, type);
 
-    writeFileSync(`${dir}/${type}.code-snippets`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
+        if (!existsSync(dir)) {
+            mkdirSync(dir, {recursive: true});
+        }
+
+        writeFileSync(`${dir}/${type}.code-snippets`, JSON.stringify(result, null, '  '), {encoding: 'utf-8'});
+    } catch (err) {
+        console.error('error at writeSnippetsJson.');
+
+        throw err;
+    }
 };
 
 export const exportSnippets = async () => {
