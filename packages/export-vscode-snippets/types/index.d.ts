@@ -31,6 +31,9 @@ declare namespace export_vscode_snippets {
 
     interface ExportSnippetsConfig {
         src: string
+        output: {
+            dir: string
+        }
         snippetFinderList: {
             type: SnippetType
             finderName: string
