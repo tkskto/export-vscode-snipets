@@ -38,8 +38,8 @@
         "test:base": "jest --config=jest.config.js --testTimeout=60000"
     },
     "dependencies": {
-        "globby": "13.1.2",
-        "node-html-parser": "6.1.1"
+        "globby": "13.1.3",
+        "node-html-parser": "6.1.4"
     },
     "gitHead": "874983bfc48e64f6c95c6847b52a523a57b09f12"
 }

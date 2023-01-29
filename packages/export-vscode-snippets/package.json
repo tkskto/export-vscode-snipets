@@ -42,11 +42,11 @@
         "tmp": "node bin/export.js -c .export-snippets.config.js"
     },
     "dependencies": {
-        "commander": "9.4.1"
+        "commander": "10.0.0"
     },
     "devDependencies": {
-        "@rollup/plugin-json": "5.0.1",
-        "@rollup/plugin-typescript": "9.0.2"
+        "@rollup/plugin-json": "6.0.0",
+        "@rollup/plugin-typescript": "11.0.0"
     },
     "gitHead": "874983bfc48e64f6c95c6847b52a523a57b09f12"
 }
